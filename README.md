@@ -1,30 +1,60 @@
 # 📦 Inventory Backend - ProductService (.NET 8)
 
 ## ✅ Requisitos
+
 - [.NET SDK 8.0]
 - [SQL Server]
-- Visual Studio 2022
-- Git
-- 
-## ⚙️ Ejecución del backend
-### 1. Creación de las BD y Tablas
-- ejecuta el script que se encuentra en la raíz del proyecto "BDScript"
-- Deben crearce dos BD una llamada  ProductDB y TransactionDB
-- Debe crearce una tabla en cada una de las BD (Products y Transactions) respectivamente
-  
-### 2. Configura la cadena de conexión
-- Edita el nombre del server en el archivo appsettings.json ubicado en ProductService/ProductService.API/appsettings.json.
-- En "DefaultConnection" modificar "Server=ASUS-ROG\\SQLEXPRESS01; por el nombre de tu instancia de SQL Server, dejar el nombre de la DB igual.
+- [Visual Studio 2022]
+- [Git]
 
-- Edita el nombre del server en el archivo appsettings.json ubicado en TransactionService/TransactionService.API/appsettings.json.
-- En "DefaultConnection" modificar "Server=ASUS-ROG\\SQLEXPRESS01; por el nombre de tu instancia de SQL Server, dejar el nombre de la DB igual.
-- Modificar el "ProductService" por la dirección en la que se esta ejecutando el microservicio de ProductService
+## ⚙️ Ejecución del Backend
 
-### 3.Levanta el proyecto
-- Debes ejecutar el proyecto con el inicio multiple de proyectos
-- En el boton de Iniciar proyecto - Start, ve a "Configure Startup Projects"
-- Selecciona Multiple startup
-- en la opción action de los proyectos ProductService.API y TransactionService.API pon en Start
+### 1. Crear las Bases de Datos y Tablas
 
-- Ahora ya puedes dar a iniciar los proyectos.
-- Podras ver las APIs con sus URLs las cuales te pueden servir para configurar el ProductService y los endpoints en el proyecto de Angular
+- Ejecuta el script ubicado en la raíz del proyecto, en la carpeta `BDScript`.
+- Se crearán dos bases de datos:
+  - `ProductDB`
+  - `TransactionDB`
+- Se crearán dos tablas:
+  - `Products` en `ProductDB`
+  - `Transactions` en `TransactionDB`
+
+### 2. Configurar las Cadenas de Conexión
+
+#### En `ProductService`:
+
+- Abre el archivo `ProductService/ProductService.API/appsettings.json`.
+- Modifica el valor de la propiedad `DefaultConnection`:
+  - Cambia `Server=ASUS-ROG\\SQLEXPRESS01` por el nombre de tu instancia de SQL Server.
+  - Mantén el nombre de la base de datos como está (`ProductDB`).
+
+#### En `TransactionService`:
+
+- Abre el archivo `TransactionService/TransactionService.API/appsettings.json`.
+- Modifica el valor de la propiedad `DefaultConnection`:
+  - Cambia `Server=ASUS-ROG\\SQLEXPRESS01` por tu instancia de SQL Server.
+  - Mantén el nombre de la base de datos como está (`TransactionDB`).
+- Actualiza también la clave `ProductService` con la URL del microservicio `ProductService`.
+
+### 3. Ejecutar el Proyecto
+
+- Configura Visual Studio para iniciar múltiples proyectos:
+  - Haz clic en la flecha junto al botón **Start** y selecciona **Configure Startup Projects**.
+  - Marca la opción **Multiple startup projects**.
+  - En la columna **Action**, selecciona `Start` para:
+    - `ProductService.API`
+    - `TransactionService.API`
+
+- Haz clic en **Start** para iniciar ambos microservicios.
+
+### 🔗 Endpoints
+
+Una vez iniciados los servicios, podrás acceder a las APIs desde sus respectivas URLs. Estas te servirán para:
+
+- Configurar la URL del `ProductService` dentro de `TransactionService`.
+- Consumir los endpoints desde el proyecto frontend desarrollado en Angular.
+
+ProductService API
+![image](https://github.com/user-attachments/assets/933535e9-9511-4837-9afc-10d6239edfdf)
+
+
