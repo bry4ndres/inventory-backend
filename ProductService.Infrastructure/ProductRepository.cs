@@ -30,6 +30,7 @@ namespace ProductService.Infrastructure
         {
             return await _context.Products
                 .Where(p => !p.IsDeleted)
+                .OrderByDescending(p => p.Id)
                 .ToListAsync();
         }
 
