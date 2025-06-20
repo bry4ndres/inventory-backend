@@ -57,4 +57,8 @@ Una vez iniciados los servicios, podrás acceder a las APIs desde sus respectiva
 ProductService API
 ![image](https://github.com/user-attachments/assets/933535e9-9511-4837-9afc-10d6239edfdf)
 
+TransactionService API
+![image](https://github.com/user-attachments/assets/1101a686-ce34-42fd-8688-91e1d6baeeee)
+
+
 
